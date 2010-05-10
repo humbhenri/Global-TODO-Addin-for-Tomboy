@@ -1,0 +1,42 @@
+Global TODO 
+-----------
+
+This addin for tomboy when enabled checks every open note for the #TODO string. Every note with this string 
+gets an entry in a note called "Global Todo". When the #TODO string is removed the entry is automatically 
+removed.
+
+Tomboy is a desktop note-taking application for Linux, Unix, Windows, and Mac OS X. Please refer to http://projects.gnome.org/tomboy/.
+
+License
+-------
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+2010, Humberto Pinheiro <humbhenri@gmail.com>
+
+Instalation
+-----------
+
+Tomboy and Tomboy addins are written in C# under the Mono platform. To compile the source you need the 
+required packages that provide mono and tomboy development for your system. In fedora systems, install the package 
+tomboy-devel with the command "yum install tomboy-devel". Once compiled move the .dll file into the tomboy 
+addin folder - usually the directory ".config/tomboy/addins" under your user directory and restart tomboy. The 
+plugin should appear in tomboy's plugins menu and must be activated to be used.
+
+Usage
+-----
+
+The user just need to write #TODO inside a note to put it automatically inside the note "Global Todo". The 
+"Global Todo" note tracks all notes with the #TODO inside.
+

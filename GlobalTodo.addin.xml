@@ -1,0 +1,20 @@
+<Addin id="GlobalTodoAddin"
+    namespace="Tomboy"
+    name="GlobalTodo"
+    author="Humberto Pinheiro"
+    description="Track all notes containing the #TODO string and provide a link to them inside a global TODO note."
+    category="Tools"
+    defaultEnabled="false"
+    version="0.1">
+    <Runtime>
+        <Import assembly="GlobalTodo.dll" />
+    </Runtime>
+
+    <Dependencies>
+        <Addin id="Tomboy" version="0.10" />
+    </Dependencies>
+
+    <Extension path="/Tomboy/NoteAddins">
+        <NoteAddin type="Tomboy.GlobalTodo.GlobalTodoNoteAddin" />
+    </Extension>
+</Addin>
