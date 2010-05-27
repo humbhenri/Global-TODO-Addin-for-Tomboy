@@ -14,7 +14,7 @@ namespace Tomboy.GlobalTodo
 	{
 		static string PATTERN = "#TODO";
 		static string GLOBALTITLE = "Global Todo";
-		static string GLOBALCONTENT = "<note-content><bold>TODO</bold>\n\n</note-content>";
+		static string GLOBALCONTENT = "<note-content><bold>Global Todo</bold>\n\n</note-content>";
 		static Note GlobalTodo;
 
 		public override void Initialize ()
@@ -50,9 +50,11 @@ namespace Tomboy.GlobalTodo
 
 		private void CheckRegion() {
 			try {
+				//Console.WriteLine("Trying note " + Note.Title);
 				if(Note.Buffer.Text.IndexOf(PATTERN, 0) > -1) {
 					if(GlobalTodo.Buffer.Text.IndexOf(Note.Title, 0) == -1){
 						// insert note title in the global todo note
+						//Console.WriteLine("Inserting " + Note.Title + " in global todo");
 						GlobalTodo.Buffer.PlaceCursor(GlobalTodo.Buffer.EndIter);
 						GlobalTodo.Buffer.InsertAtCursor(Note.Title + "\n");
 					}
@@ -60,6 +62,7 @@ namespace Tomboy.GlobalTodo
 				else {
 					// this note doesn't have the #TODO tag, should not get an entry in the GLOBAL TODO note
 					if(GlobalTodo.Buffer.Text.IndexOf(Note.Title, 0) > -1){						
+						//Console.WriteLine("Note " + Note.Title + " doesn't hava the tag.");
 						TextIter start, end;
 						GlobalTodo.Buffer.StartIter.ForwardSearch(Note.Title, Gtk.TextSearchFlags.TextOnly, out start, out end, GlobalTodo.Buffer.EndIter);
 						end.ForwardChar();
