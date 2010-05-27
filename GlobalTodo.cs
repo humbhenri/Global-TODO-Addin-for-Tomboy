@@ -14,7 +14,7 @@ namespace Tomboy.GlobalTodo
 	{
 		static string PATTERN = "#TODO";
 		static string GLOBALTITLE = "Global Todo";
-		static string GLOBALCONTENT = "<note-content><bold>Global Todo</bold>\n\n</note-content>";
+		static string GLOBALCONTENT = "<note-content><bold>Tasks to do ...</bold>\n\n</note-content>";
 		static Note GlobalTodo;
 
 		public override void Initialize ()
